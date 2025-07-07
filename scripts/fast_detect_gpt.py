@@ -149,14 +149,15 @@ def experiment(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output_file', type=str, default="./exp_test/results/xsum_gpt2")
-    parser.add_argument('--dataset', type=str, default="xsum")
+    parser.add_argument('--dataset', type=str, default="xsum") 
+    parser.add_argument('--data_path', type=str)
     parser.add_argument('--dataset_file', type=str, default="./exp_test/data/xsum_gpt2")
     parser.add_argument('--reference_model_name', type=str, default="gpt2")
     parser.add_argument('--scoring_model_name', type=str, default="gpt2")
     parser.add_argument('--discrepancy_analytic', action='store_true')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--device', type=str, default="cuda")
-    parser.add_argument('--cache_dir', type=str, default="../cache")
+    parser.add_argument('--cache_dir', type=str, default="/gscratch/xlab/hallisky/cache")
     args = parser.parse_args()
 
     experiment(args)
